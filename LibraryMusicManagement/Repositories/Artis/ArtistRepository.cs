@@ -3,12 +3,12 @@ using LibraryMusicManagement.Models;
 
 namespace LibraryMusicManagement.Repositories.Artis
 {
-    public class ArtisRepository : IArtisRepository
+    public class ArtistRepository : IArtistRepository
     {
 
         private readonly IDbDataAccess _dataAccess;
 
-        public ArtisRepository(IDbDataAccess dataAccess)
+        public ArtistRepository(IDbDataAccess dataAccess)
         {
             _dataAccess = dataAccess;
         }

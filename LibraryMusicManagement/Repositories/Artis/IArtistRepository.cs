@@ -2,7 +2,7 @@
 
 namespace LibraryMusicManagement.Repositories.Artis
 {
-    public interface IArtisRepository
+    public interface IArtistRepository
     {
         Task AddArtistAsync(ArtisModel artis);
         Task DeleteArtistAsync(int id);
