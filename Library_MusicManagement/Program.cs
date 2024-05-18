@@ -1,4 +1,8 @@
-using libra
+using FluentValidation;
+using Library_MusicData.Data;
+using Library_MusicData.Models;
+using Library_MusicData.Repositories.Artist;
+using Library_MusicData.Validations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +10,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSingleton<IDbDataAccess, DbDataAccess>();
 builder.Services.AddScoped<IArtistRepository, ArtistRepository>();
+
+//Validations 
+
+builder.Services.AddScoped<IValidator<ArtistModel>, ArtistValidator>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
