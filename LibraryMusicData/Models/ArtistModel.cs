@@ -1,6 +1,6 @@
 ﻿namespace LibraryMusicManagement.Models
 {
-    public class ArtisModel
+    public class ArtistModel
     {
         public int ArtistID { get; set; }
 

@@ -1,5 +1,6 @@
-using LibraryMusicManagement.Data;
-using LibraryMusicManagement.Repositories.Artis;
+
+using LibraryMusicData.Data;
+using Repositories.Artist
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,9 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<IDbDataAccess, DbDataAccess>();
 builder.Services.AddScoped<IArtistRepository, ArtistRepository>();
+
+//Validations
+builder.Services.Add.Scoped<IValidator<ArtistModel>, ArtistValidator>
 
 var app = builder.Build();
 

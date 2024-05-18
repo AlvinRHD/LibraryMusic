@@ -13,17 +13,17 @@ namespace LibraryMusicManagement.Repositories.Artis
             _dataAccess = dataAccess;
         }
 
-        public async Task<IEnumerable<ArtisModel>> GetArtistAsync()
+        public async Task<IEnumerable<ArtistModel>> GetArtistAsync()
         {
-            return await _dataAccess.GetDataAsync<ArtisModel, dynamic>(
+            return await _dataAccess.GetDataAsync<ArtistModel, dynamic>(
                 "spArtist_GetAll",
                 new { }
                 );
         }
 
-        public async Task<ArtisModel?> GetArtistByIdAsync(int id)
+        public async Task<ArtistModel?> GetArtistByIdAsync(int id)
         {
-            var artist = await _dataAccess.GetDataAsync<ArtisModel, dynamic>(
+            var artist = await _dataAccess.GetDataAsync<ArtistModel, dynamic>(
                 "spArtist_GetByID",
                 new { ArtistID = id }
                 );
@@ -31,19 +31,19 @@ namespace LibraryMusicManagement.Repositories.Artis
             return artist.FirstOrDefault();
         }
 
-        public async Task AddArtistAsync(ArtisModel artis)
+        public async Task AddArtistAsync(ArtistModel artist)
         {
             await _dataAccess.SaveDataAsync(
                 "spArtist_Insert",
-                new { artis.ArtistName, artis.RealName, artis.RealLastName, artis.Country }
+                new { artist.ArtistName, artist.RealName, artist.RealLastName, artist.Country }
                 );
         }
 
-        public async Task EditArtistAsync(ArtisModel artis)
+        public async Task EditArtistAsync(ArtistModel artist)
         {
             await _dataAccess.SaveDataAsync(
                 "spArtist_Update",
-                artis
+                artist
                 );
         }
 
