@@ -48,23 +48,45 @@ namespace Library_MusicManagement.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] ArtistModel artist)
         {
-            await _artistRepository.AddArtistAsync(artist);
 
             ValidationResult validationResult = await _validator.ValidateAsync(artist);
+            if (!validationResult.IsValid)
+                return UnprocessableEntity(validationResult);
+
+            await _artistRepository.AddArtistAsync(artist);
 
             return Created();
         }
 
         // PUT api/<ArtistAPIController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<IActionResult> Put(int id, [FromBody] ArtistModel artist)
         {
+            var artistEditable = await _artistRepository.GetArtistByIdAsync(id);
+
+            if (artistEditable == null)
+                return NotFound();
+
+            ValidationResult validationResult = await _validator.ValidateAsync(artist);
+
+            if (!validationResult.IsValid)
+                return UnprocessableEntity(validationResult);
+
+            await _artistRepository.EditArtistAsync(artist);
+
+            return Accepted();
         }
 
         // DELETE api/<ArtistAPIController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
+            var artist = await _artistRepository.GetArtistByIdAsync(id);
+            if (artist == null)
+                return NotFound();
+
+            await _artistRepository.DeleteArtistAsync(id);
+            return NoContent();
         }
     }
 }

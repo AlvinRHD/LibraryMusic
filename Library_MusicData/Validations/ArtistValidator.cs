@@ -15,7 +15,7 @@ namespace Library_MusicData.Validations
             RuleFor(x => x.ArtistName)
                 .Cascade(CascadeMode.Stop)
                 .NotEmpty().WithMessage("El Nombre artístico es obligatorio")
-                .MinimumLength(2).WithMessage("Debe contener minimo 2 letras");
+                .MinimumLength(2).WithMessage("Debe contener mínimo 2 letras");
 
             RuleFor(x => x.RealName)
                 .Cascade(CascadeMode.Stop)

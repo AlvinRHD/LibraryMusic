@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace Library_MusicData.Models
 {
-    internal class SongsModel
+    public class SongsModel
     {
+        public int SongID { get; set; }
+
+        public string Title { get; set;}
+
+        public string SongLanguaje { get; set; }
+
+        public int AlbumID { get; set; }
+
     }
 }
