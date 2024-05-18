@@ -1,6 +1,8 @@
 
+using FluentValidation;
+using LibraryMusicData.Models.ArtistModel;
 using LibraryMusicData.Data;
-using Repositories.Artist
+using LibraryMusicDataData.Repositories.Artist;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,7 +1,7 @@
 ﻿using LibraryMusicManagement.Data;
 using LibraryMusicManagement.Models;
 
-namespace LibraryMusicManagement.Repositories.Artis
+namespace LibraryMusicManagement.Repositories.Artist
 {
     public class ArtistRepository : IArtistRepository
     {
