@@ -17,7 +17,7 @@ namespace Library_MusicData.Repositories.Album
             _dataAccess = dataAccess;
         }
 
-        ////////////////////------/////////////////////////////////
+        
 
         public async Task<IEnumerable<AlbumsModel>> GetAllAlbumsAsync()
         {
@@ -26,7 +26,6 @@ namespace Library_MusicData.Repositories.Album
                 new { }
             );
 
-            // Para cada álbum, obtén las canciones asociadas
             foreach (var album in albums)
             {
                 album.Songs = (List<SongsModel>)await GetSongsByAlbumIdAsync(album.AlbumID);
@@ -85,7 +84,7 @@ namespace Library_MusicData.Repositories.Album
                 new { AlbumID = id }
             );
         }
-        ////////////////////------/////////////////////////////////
+        
 
     }
 }

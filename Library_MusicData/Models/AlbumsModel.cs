@@ -18,8 +18,6 @@ namespace Library_MusicData.Models
         public string Genre { get; set; }
 
         public int ArtistID { get; set; }
-
-        // Lista de canciones asociadas a este album
         public List<SongsModel> Songs { get; set; }
     }
 }

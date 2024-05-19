@@ -35,7 +35,7 @@ namespace Library_MusicData.Validations
             RuleFor(x => x.Country)
                 .Cascade(CascadeMode.Stop)
                 .NotEmpty().WithMessage("El país del artista es obligatorio")
-                .MinimumLength(4).WithMessage("Debe contener mínimo 4 letras");
+                .MinimumLength(2).WithMessage("Debe contener mínimo 2 letras");
         }
     }
 }

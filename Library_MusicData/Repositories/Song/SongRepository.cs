@@ -16,7 +16,6 @@ namespace Library_MusicData.Repositories.Song
         {
             _dataAccess = dataAccess;
         }
-        ////////////////////------/////////////////////////////////
         public async Task<IEnumerable<SongsModel>> GetAllSongsAsync()
         {
             return await _dataAccess.GetDataAsync<SongsModel, dynamic>(
@@ -58,7 +57,6 @@ namespace Library_MusicData.Repositories.Song
                 new { SongID = id }
             );
         }
-        ////////////////////------/////////////////////////////////
 
     }
 }

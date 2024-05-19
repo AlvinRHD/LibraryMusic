@@ -13,7 +13,7 @@ namespace Library_MusicManagement.Controllers
     public class AlbumAPIController : ControllerBase
     {
 
-        /////////////////////////////////////////////////////----------------
+        
         private readonly IAlbumRepository _albumRepository;
         private readonly IValidator<AlbumsModel> _validator;
 
@@ -25,7 +25,7 @@ namespace Library_MusicManagement.Controllers
             _albumRepository = albumRepository;
             _validator = validator;
         }
-        /////////////////////////////////////////////////////----------------
+      
   
 
         // GET: api/<AlbumAPIController>
@@ -70,7 +70,7 @@ namespace Library_MusicManagement.Controllers
             if (!validationResult.IsValid)
                 return UnprocessableEntity(validationResult);
 
-            album.AlbumID = id; // Ensure the ID matches
+            album.AlbumID = id;
             await _albumRepository.EditAlbumAsync(album);
             return Accepted();
         }
