@@ -19,5 +19,7 @@ namespace Library_MusicData.Models
 
         public int ArtistID { get; set; }
 
+        // Lista de canciones asociadas a este album
+        public List<SongsModel> Songs { get; set; }
     }
 }

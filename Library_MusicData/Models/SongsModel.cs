@@ -12,8 +12,9 @@ namespace Library_MusicData.Models
 
         public string Title { get; set;}
 
-        public string SongLanguaje { get; set; }
+        public string SongLanguage { get; set; }
 
+        // ID del album al que pertenece esta canción
         public int AlbumID { get; set; }
 
     }
