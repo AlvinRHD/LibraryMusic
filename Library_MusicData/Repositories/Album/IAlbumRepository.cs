@@ -9,6 +9,6 @@ namespace Library_MusicData.Repositories.Album
         Task EditAlbumAsync(AlbumsModel album);
         Task<AlbumsModel?> GetAlbumByIdAsync(int id);
         Task<IEnumerable<AlbumsModel>> GetAllAlbumsAsync();
-        Task<IEnumerable<SongsModel>> GetSongsByAlbumIdAsync(int albumId);
+        Task<IEnumerable<SongsModel>> GetSongsByAlbumIdAsync(int AlbumID);
     }
 }

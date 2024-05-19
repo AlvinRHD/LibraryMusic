@@ -78,11 +78,11 @@ namespace Library_MusicData.Repositories.Album
             );
         }
 
-        public async Task<IEnumerable<SongsModel>> GetSongsByAlbumIdAsync(int albumId)
+        public async Task<IEnumerable<SongsModel>> GetSongsByAlbumIdAsync(int id)
         {
             return await _dataAccess.GetDataAsync<SongsModel, dynamic>(
                 "spSongs_GetByAlbumID",
-                new { AlbumID = albumId }
+                new { AlbumID = id }
             );
         }
         ////////////////////------/////////////////////////////////

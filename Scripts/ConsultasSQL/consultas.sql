@@ -1,3 +1,5 @@
+USE Library_Music
+
 SELECT * FROM Artists
 SELECT * FROM Albums
 SELECT * FROM Songs
